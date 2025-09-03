@@ -78,3 +78,10 @@ a {
   justify-content: center;
   text-decoration: none;
 }
+
+body {
+  width: 100vh;
+  height: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+}
