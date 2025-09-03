@@ -1,13 +1,6 @@
 <template>
-    <div id="all-page-ims" data-theme="light">
-        <header class="container-flex">
-            <section>
-
-            </section>
-            <section>
-
-            </section>
-        </header>
+    <div id="all-page-ims" data-theme="dark">
+       <BlocksHeader />
     </div>
 </template>
 
@@ -17,5 +10,6 @@
     height: 100vh;
     overflow: hidden;
     white-space: nowrap;
+    background-color: var(--bg-main);
 }
 </style>
