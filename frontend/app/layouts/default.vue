@@ -1,6 +1,7 @@
 <template>
     <div id="all-page-ims" data-theme="dark">
        <BlocksHeader />
+       <NuxtPage />
     </div>
 </template>
 
