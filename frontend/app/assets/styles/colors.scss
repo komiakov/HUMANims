@@ -1,0 +1,23 @@
+:root {
+    --accent: #2d89fa;
+    --secondary: #5ba5ff;
+    --warning: #ff9421;
+    --alert: #f55641;
+    --white: #FFFFFF;
+}
+
+[data-theme="dark"] {
+    --bg-secondary: #1E2531;
+    --bg-main: #090F17;
+    --ft-primary: #FFFFFF;
+    --ft-secondary: #000000;
+    --brdr-primary: #313d51;
+}
+
+[data-theme="light"] {
+    --bg-secondary: #ffffff;
+    --bg-main: #F1F4F6;
+    --ft-primary: #000000;
+    --ft-secondary: #FFFFFF;
+    --brdr-primary: #E6E6E6;
+}
