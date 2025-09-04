@@ -71,7 +71,7 @@ function handleClick(event: Event) {
     border-radius: 6px;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: .3s all;
+    transition: .3s ease;
 
     .hmn-button__label {
         padding: 0 9px;
@@ -99,6 +99,10 @@ function handleClick(event: Event) {
 
         .hmn-button__icon svg path {
             stroke: var(--white);
+        }
+
+        @include hover() {
+            background-color: var(--secondary);
         }
     }
 
