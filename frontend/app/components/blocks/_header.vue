@@ -41,7 +41,7 @@ const isActive = (path: string) => {
 
 <style lang="scss">
 #header-ims {
-    padding: 12px 24px;
+    padding: 12px;
     background-color: var(--bg-secondary);
 }
 
