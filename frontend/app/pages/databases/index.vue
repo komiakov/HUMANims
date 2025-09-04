@@ -4,7 +4,7 @@
             <section>
                 <elements-dropdown-menu label="Create" variant="accent" icon="add" iconSide="right" alignment="left">
                     <template #>
-                        <elements-button class="primary" icon="database" label="Database" :disabled="true" />
+                        <elements-button class="primary" icon="database" label="Database" to="/databases/new" />
                         <elements-button class="primary" icon="addFolder" label="Folder" :disabled="true" />
                     </template>
                 </elements-dropdown-menu>

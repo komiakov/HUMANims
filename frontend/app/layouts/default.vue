@@ -34,6 +34,7 @@ const { theme } = useThemes();
             padding: 6px;
             background-color: var(--bg-secondary);
             border-radius: 9px;
+            border: 1px solid transparent;
         }
     }
 }
@@ -46,7 +47,7 @@ const { theme } = useThemes();
 
 [data-theme="dark"] {
     #content-ims-functional-panel {
-        border: 1px solid var(--brdr-primary);
+        border-color:var(--brdr-primary);
     }
 }
 </style>
