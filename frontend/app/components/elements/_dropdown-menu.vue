@@ -61,7 +61,6 @@ onBeforeUnmount(() => {
         min-width: 240px;
         background-color: var(--bg-secondary);
         border-radius: 9px;
-        border: 1px solid var(--brdr-primary);
 
         .hmn-button{
             justify-content: start;
@@ -74,6 +73,17 @@ onBeforeUnmount(() => {
         &.left {
             left: 0;
         }
+    }
+}
+[data-theme="light"] {
+    .hmn-dropdown-menu .hmn-dropdown-menu_body {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+}
+
+[data-theme="dark"] {
+    .hmn-dropdown-menu .hmn-dropdown-menu_body {
+        border: 1px solid var(--brdr-primary);
     }
 }
 </style>
