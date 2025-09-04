@@ -15,7 +15,7 @@ const isActive = (path: string) => {
 <template>
     <header id="header-ims" class="container-flex">
         <section>
-            <elements-button label="Dashboard" class="mbl header-ims__nav-btn" icon="home" to="/"
+            <elements-button label="Dashboard" class="mbl header-ims__nav-btn" icon="dashboard" to="/"
                 :class="isActive('/') ? 'accent' : 'primary'" />
             <elements-button label="Databases" class="mbl header-ims__nav-btn" icon="database" to="/databases"
                 :class="isActive('/databases') ? 'accent' : 'primary'" />

@@ -5,7 +5,7 @@
                 
             </section>
             <section>
-                
+                <elements-button class="primary" icon="editDashboard" :disabled="true" />
             </section>
         </div>
         <div id="content-ims-body">
