@@ -17,7 +17,7 @@ const props = defineProps({
         type: String,
         default: "right"
     },
-    type: {
+    variant: {
         type: String,
         default: "primary"
     }
@@ -39,12 +39,41 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div class="hmn-dropdown-menu">
-        <ElementsButton :label="label" :class="type" :icon="icon" :iconSide="iconSide" @click="isOpen = !isOpen" />
-        <div>
+    <div class="hmn-dropdown-menu" ref="dropdownRef">
+        <ElementsButton :label="label" :class="variant" :icon="icon" :iconSide="iconSide" @click="isOpen = !isOpen" />
+        <div v-if="isOpen" class="hmn-dropdown-menu_body" :class="alignment">
             <slot></slot>
         </div>
     </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.hmn-dropdown-menu {
+    position: relative;
+
+    .hmn-dropdown-menu_body {
+        z-index: 1000;
+        position: absolute;
+        display: grid;
+        gap: 12px;
+        padding: 9px;
+        top: 60px;
+        min-width: 240px;
+        background-color: var(--bg-secondary);
+        border-radius: 9px;
+        border: 1px solid var(--brdr-primary);
+
+        .hmn-button{
+            justify-content: start;
+        }
+
+        &.right {
+            right: 0;
+        }
+
+        &.left {
+            left: 0;
+        }
+    }
+}
+</style>

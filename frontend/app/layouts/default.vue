@@ -35,10 +35,6 @@ const { theme } = useThemes();
             background-color: var(--bg-secondary);
             border-radius: 9px;
         }
-
-        #content-ims-body{
-
-        }
     }
 }
 </style>

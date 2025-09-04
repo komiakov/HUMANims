@@ -24,9 +24,15 @@ const isActive = (path: string) => {
         <section>
             <elements-button class="primary" :icon="theme == 'light' ? 'moon' : 'sun'" @click="changeTheme" />
             <elements-button class="primary" icon="notification" :disabled="true" />
-            <elements-dropdown-menu label="Andrii" type="accent mbl" icon="arrowDown" iconSide="right">
+            <elements-dropdown-menu label="Andrii" variant="accent mbl" icon="arrowDown" iconSide="right">
                 <template #>
-
+                    <elements-button class="primary" icon="settings" label="Settings" :disabled="true" />
+                    <elements-button class="primary" icon="license" label="License" :disabled="true" />
+                    <hr>
+                    <elements-button class="primary" icon="documentation" label="Documentation" :disabled="true" />
+                    <elements-button class="primary" icon="support" label="Support" :disabled="true" />
+                    <hr>
+                    <elements-button class="primary" icon="logOut" label="Log Out" :disabled="true" />
                 </template>
             </elements-dropdown-menu>
         </section>
