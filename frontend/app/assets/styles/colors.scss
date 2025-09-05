@@ -1,8 +1,11 @@
 :root {
-    --accent: #006aff;
+    --white: #ffffff;
 }
 
 [data-theme="light"] {
+    --accent: #237260;
+    --accent2: #33a48a;
+
     --bg-main: #ffffff;
     --bg-secondary: #fafafa;
 
@@ -15,6 +18,9 @@
 }
 
 [data-theme="dark"] {
+    --accent: #2e8571;
+    --accent2: #42aa92;
+    
     --bg-main: #0a0a0a;
     --bg-secondary: #000000;
 
