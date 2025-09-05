@@ -1,0 +1,16 @@
+:root {
+
+}
+
+[data-theme="light"] {
+    --bg-item-main: #e7e7e7;
+    
+    --ft-main: #171717;
+    --ft-secondary: #666666;
+}
+
+[data-theme="dark"] {
+    --bg-item-main: #1f1f1f;
+
+    --ft-main: #EDEDED;
+}
