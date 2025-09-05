@@ -1,16 +1,27 @@
 :root {
-
+    --accent: #006aff;
 }
 
 [data-theme="light"] {
-    --bg-item-main: #e7e7e7;
+    --bg-main: #ffffff;
+    --bg-secondary: #fafafa;
+
+    --bg-item-main: #f1efef;
     
     --ft-main: #171717;
-    --ft-secondary: #666666;
+    --ft-secondary: #818181;
+
+    --brbr-color: #c6c6c6;
 }
 
 [data-theme="dark"] {
+    --bg-main: #0a0a0a;
+    --bg-secondary: #000000;
+
     --bg-item-main: #1f1f1f;
 
     --ft-main: #EDEDED;
+    --ft-secondary: #8A8A8A;
+
+    --brbr-color: #505050;
 }
