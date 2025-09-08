@@ -52,9 +52,24 @@ watch(() => route.path, () => {
             </section>
             <section>
                 <elements-button icon_left="search" class="primary" :disabled="true" />
-                <elements-button :icon_left="theme === 'light' ? 'sun' : 'moon'" class="primary" @click="switchTheme" />
+                <elements-button :icon_left="theme === 'light' ? 'moon' : 'sun'" class="primary" @click="switchTheme" />
                 <elements-button icon_left="notification" class="primary" :disabled="true" />
-                <elements-dropdown-menu label="Andrii" icon_right="arrow_down" type="accent" />
+                <elements-dropdown-menu id="header__dropdown" label="Andrii" icon_right="arrow_down" type="accent">
+                    <template #>
+                        <div id="header__dropdown__info">
+                            <span id="header__dropdown__info__name">Andrii KOMIAKOV</span>
+                            <span id="header__dropdown__info__email">andrii.komiakov@icloud.com</span>
+                        </div>
+                        <hr>
+                        <elements-button icon_left="settings" label="Settings" class="primary" :disabled="true" />
+                        <elements-button icon_left="license" label="License" class="primary" :disabled="true" />
+                        <hr>
+                        <elements-button icon_left="documentation" label="Documentation" class="primary" :disabled="true" />
+                        <elements-button icon_left="support" label="Support" class="primary" :disabled="true" />
+                        <hr>
+                        <elements-button icon_left="log_out" label="Log Out" class="primary" :disabled="true" />
+                    </template>
+                </elements-dropdown-menu>
             </section>
         </section>
         <section>
@@ -100,6 +115,25 @@ watch(() => route.path, () => {
         #header-ims__logo__name {
             font-size: 18px;
             color: var(--ft-main);
+        }
+    }
+
+    #header__dropdown {
+        #header__dropdown__info {
+            display: grid; gap: 6px;
+            padding: 12px 6px;
+            #header__dropdown__info__name {
+                font-size: 16px; font-weight: 500;
+                color: var(--ft-main);
+                cursor: default;
+            }
+
+            #header__dropdown__info__email {
+                font-size: 12px;
+                opacity: .75;
+                color: var(--ft-main);
+                cursor: default;
+            }
         }
     }
 }
