@@ -1,0 +1,125 @@
+@mixin hover() {
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  }
+
+  &:active {
+    @media (hover: none) {
+      @content;
+    }
+  }
+}
+
+.hmn-header {
+  display: grid;
+  gap: var(--main-gap);
+  padding: 12px 12px 0;
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--brdr-color);
+
+  #header-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--main-gap);
+    svg {
+      width: 36px; height: 36px;
+      path {
+        fill: var(--accent);
+      }
+    }
+
+    #header-logo__label {
+      color: var(--ft-main);
+      font-size: 18px;
+      font-weight: 200;
+    }
+  }
+
+  #header-user-info {
+    display: grid;
+    margin: 12px 0 12px 12px;
+    color: var(--ft-main);
+    span {
+      cursor: default;
+    }
+    #header-user-info__name {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    #header-user-info__email {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.5;
+    }
+  }
+
+  nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--main-gap);
+    padding: 7px 0;
+    .header_nav_nav-link {
+      display: flex;
+      align-items: center;
+      gap: var(--main-gap);
+      padding: 6px 12px 6px 9px; 
+      border-radius: var(--items-border-r);
+
+      &,
+      & .header_nav_nav-link__label,
+      & .header_nav_nav-link__icon path {
+        transition: var(--transtition);
+      }
+      .header_nav_nav-link__label {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--ft-secondary);
+      }
+      .header_nav_nav-link__icon svg path{
+        stroke: var(--ft-secondary);
+      }
+      @include hover() {
+        background-color: var(--bg-item-main);
+        .header_nav_nav-link__label {
+          color: var(--ft-main);
+        }
+        .header_nav_nav-link__icon svg path {
+          stroke: var(--ft-main);
+        }
+      }
+
+      &.active {
+        .header_nav_nav-link__label {
+          color: var(--ft-main);
+        }
+        .header_nav_nav-link__icon svg path {
+          stroke: var(--accent);
+        }
+      }
+    }
+
+    .header_nav_nav-line {
+      position: absolute;
+      bottom: 0;
+      width: 0px;
+      height: 3px;
+      border-radius: 3px 3px 0 0;
+      background-color: var(--accent);
+      transition: var(--transtition);
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .hmn-header {
+    #header-logo #header-logo__label {
+      display: none;
+    }
+    nav {
+      justify-content: space-around;
+    }
+  }
+}

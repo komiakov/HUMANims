@@ -1,0 +1,112 @@
+@mixin hover() {
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  }
+
+  &:active {
+    @media (hover: none) {
+      @content;
+    }
+  }
+}
+
+.hmn-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--main-gap);
+  min-width: 42px;
+  height: 42px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  border-radius: var(--items-border-r);
+  cursor: pointer;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--accent2-w-opacity);
+    width: 10%;
+    height: 25%;
+    border-radius: 50%;
+    z-index: 1;
+    top: 35%;
+    left: 45%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    transition: var(--transtition)
+  }
+
+  &,
+  & .hmn-button__label,
+  & .hmn-button__icon path {
+    transition: var(--transtition);
+  }
+  .hmn-button__icon, .hmn-button__label {
+    z-index: 2;
+  }
+  .hmn-button__label {
+    
+    padding: 0 9px;
+    font-size: 13px;
+  }
+
+  &.primary {
+    border-color: var(--brdr-color);
+
+    .hmn-button__icon svg path {
+      stroke: var(--accent);
+    }
+
+    .hmn-button__label {
+      color: var(--ft-main);
+    }
+
+    @include hover() {
+      background-color: var(--bg-item-main);
+      border-color: transparent;
+    }
+  }
+  &.accent {
+    background-color: var(--accent);
+
+    .hmn-button__icon svg path {
+      stroke: var(--white);
+    }
+
+    .hmn-button__label {
+      color: var(--white);
+    }
+
+    @include hover() {
+      &::before {
+        -webkit-transform: scale(12);
+        transform: scale(12);
+        -webkit-transition: border-radius 0.5s 0.5s, -webkit-transform 0.5s;
+        transition: border-radius 0.5s 0.5s, -webkit-transform 0.5s;
+        transition: transform 0.5s, border-radius 0.5s 0.5s;
+        transition: transform 0.5s, border-radius 0.5s 0.5s,
+        -webkit-transform 0.5s;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
