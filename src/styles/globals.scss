@@ -17,6 +17,8 @@ body {
   background-color: var(--bg-secondary);
 
   #ims-page {
+    display: grid; 
+    grid-template-rows: auto 1fr;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -25,6 +27,11 @@ body {
         padding: 12px;
         border-bottom: 1px solid var(--brdr-color);
         background-color: var(--bg-main);
+    }
+
+    #ims-content-body{
+      height: 100%;
+      overflow: hidden;
     }
   }
 }
