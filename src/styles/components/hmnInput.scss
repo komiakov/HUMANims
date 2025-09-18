@@ -12,6 +12,9 @@
     .hmn-input__icon svg path{
         stroke: var(--accent);
     }
+    .hmn-input__icon--clear {
+        cursor: pointer;
+    }
 
     input {
         flex: 1;

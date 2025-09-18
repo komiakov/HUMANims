@@ -1,6 +1,10 @@
 #ims-content-body {
     display: flex;
     #ims-content-body__left-panel {
+        display: grid;
+        gap: 9px;
+        align-content: start;
+        align-items: start;
         background-color: var(--bg-main);
     }
     #ims-content-body__column-content {
@@ -22,7 +26,7 @@
         position: relative;
         #ims-content-body__left-panel {
             padding: 24px;
-            z-index: 99999;
+            z-index: 99998;
             position: absolute;
             left: -100vw;
             width: 100vw;
@@ -30,6 +34,10 @@
             transition: var(--transtition);
             &.active {
                 left: 0;
+            }
+            #left-panel_header {
+                display: flex; 
+                gap: 9px;
             }
         }
     }

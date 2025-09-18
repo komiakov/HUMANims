@@ -25,9 +25,10 @@ export default function Databases() {
     <div id="ims-content">
       <div id="functional-panel" className="container-flex">
         <section>
-          
+          <HmnButton iconLeft="arrowLeft" type="accent" disabled={true} />
         </section>
         <section>
+          <HmnButton label="Edit form" iconLeft="editForm" disabled={true} />
           <HmnButton label="Save" iconLeft="save" type="accent" disabled={true} />
         </section>
       </div>
@@ -35,11 +36,13 @@ export default function Databases() {
       <div id="ims-content-body">
         <div id="ims-content-body__left-panel" className={isOpenLeftPanel ? 'active' : ''}>
           <div id="left-panel_header">
-            <HmnInput placeholder="Search" iconLeft="search" />
+            <HmnInput placeholder="Database name" defaultValue="New database" />
             {isMobile && (
               <HmnButton iconLeft="close" onClick={() => setIsOpenLeftPanel(false)} />
             )}
           </div>
+          <hr />
+          <HmnInput placeholder="Search columns" iconLeft="search" />
         </div>
 
         <div id="ims-content-body__column-content">
