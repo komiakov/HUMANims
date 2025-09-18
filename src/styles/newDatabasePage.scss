@@ -6,6 +6,23 @@
         align-content: start;
         align-items: start;
         background-color: var(--bg-main);
+        .hmn-column {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 6px;
+            border-radius: var(--items-border-r);
+            cursor: pointer;
+            background-color: var(--bg-item-main);
+            .hmn-button {
+                cursor: move;
+            }
+
+            .hmn-column__label {
+                font-size: 14px;
+                color: var(--ft-main);
+            }
+        }
     }
     #ims-content-body__column-content {
         flex: 1;

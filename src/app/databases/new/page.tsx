@@ -20,7 +20,6 @@ export default function Databases() {
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
-
   return (
     <div id="ims-content">
       <div id="functional-panel" className="container-flex">
@@ -29,20 +28,38 @@ export default function Databases() {
         </section>
         <section>
           <HmnButton label="Edit form" iconLeft="editForm" disabled={true} />
-          <HmnButton label="Save" iconLeft="save" type="accent" disabled={true} />
+          <HmnButton
+            label="Save"
+            iconLeft="save"
+            type="accent"
+            disabled={true}
+          />
         </section>
       </div>
 
       <div id="ims-content-body">
-        <div id="ims-content-body__left-panel" className={isOpenLeftPanel ? 'active' : ''}>
+        <div
+          id="ims-content-body__left-panel"
+          className={isOpenLeftPanel ? "active" : ""}
+        >
           <div id="left-panel_header">
             <HmnInput placeholder="Database name" defaultValue="New database" />
             {isMobile && (
-              <HmnButton iconLeft="close" onClick={() => setIsOpenLeftPanel(false)} />
+              <HmnButton
+                iconLeft="close"
+                onClick={() => setIsOpenLeftPanel(false)}
+              />
             )}
           </div>
           <hr />
           <HmnInput placeholder="Search columns" iconLeft="search" />
+          <hr />
+          <div className="scroll">
+            <div className="hmn-column">
+              
+              <div className="hmn-column__label">New column 1</div>
+            </div>
+          </div>
         </div>
 
         <div id="ims-content-body__column-content">
@@ -50,13 +67,14 @@ export default function Databases() {
             <div id="column-body__header" className="container-flex">
               <section>
                 {isMobile && (
-                  <HmnButton iconLeft="hamburger" onClick={() => setIsOpenLeftPanel(true)} />
+                  <HmnButton
+                    iconLeft="hamburger"
+                    onClick={() => setIsOpenLeftPanel(true)}
+                  />
                 )}
               </section>
-              <section>
-                
-              </section>
-          </div>
+              <section></section>
+            </div>
           </div>
         </div>
       </div>

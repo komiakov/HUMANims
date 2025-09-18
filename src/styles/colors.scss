@@ -1,14 +1,14 @@
 :root {
     --white: #ffffff;
     --accent: #279c8e;
-    --accent2-w-opacity: #27739c1e;
+    --accent2-w-opacity: #279c8e38;
 
     --alert: #ff3b3b;
 }
 
 [data-theme="light"] {
     --bg-main: #ffffff;
-    --bg-secondary: #f0f0f0;
+    --bg-secondary: #e4e4e4;
 
     --bg-item-main: var(--accent2-w-opacity);
 
