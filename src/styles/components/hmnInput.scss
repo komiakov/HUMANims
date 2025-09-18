@@ -8,6 +8,7 @@
     border-radius: var(--items-border-r);
     border: 1px solid var(--brdr-color);
     transition: var(--transtition);
+    background-color: var(--bg-item-main);
 
     .hmn-input__icon svg path{
         stroke: var(--accent);

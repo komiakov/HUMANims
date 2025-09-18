@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body data-theme="dark">
+      <body data-theme="light">
         <div id="ims-page">
           <HmnHeader />
           {children}
