@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import HmnButton from "@/components/HmnButton";
 import "@/styles/newDatabasePage.scss";
+import HmnInput from "@/components/HmnInput";
 
 export default function Databases() {
   const [isMobile, setIsMobile] = useState(false);
@@ -34,6 +35,7 @@ export default function Databases() {
       <div id="ims-content-body">
         <div id="ims-content-body__left-panel" className={isOpenLeftPanel ? 'active' : ''}>
           <div id="left-panel_header">
+            <HmnInput placeholder="Search" iconLeft="search" />
             {isMobile && (
               <HmnButton iconLeft="close" onClick={() => setIsOpenLeftPanel(false)} />
             )}

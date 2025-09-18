@@ -1,0 +1,25 @@
+.hmn-input {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--main-gap);
+    height: 42px;
+    width: 100%;
+    padding: 0 9px;
+    border-radius: var(--items-border-r);
+    border: 1px solid var(--brdr-color);
+    transition: var(--transtition);
+
+    .hmn-input__icon svg path{
+        stroke: var(--accent);
+    }
+
+    input {
+        flex: 1;
+        font-size: 14px;
+        color: var(--ft-main);
+    }
+
+    &:focus-within {
+        border-color: var(--accent);
+    }
+}
