@@ -68,7 +68,6 @@
 
     @include hover() {
       background-color: var(--bg-item-main);
-      border-color: transparent;
     }
   }
   &.accent {

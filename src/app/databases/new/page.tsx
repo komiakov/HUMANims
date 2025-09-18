@@ -46,7 +46,7 @@ export default function Databases() {
             <HmnInput placeholder="Database name" defaultValue="New database" />
             {isMobile && (
               <HmnButton
-                iconLeft="close"
+                iconLeft="sidebar"
                 onClick={() => setIsOpenLeftPanel(false)}
               />
             )}
@@ -54,10 +54,16 @@ export default function Databases() {
           <hr />
           <HmnInput placeholder="Search columns" iconLeft="search" />
           <hr />
+          <HmnButton iconLeft="add" label="Add column" type="accent" />
+          <hr />
           <div className="scroll">
+            <div className="hmn-column active">
+              <HmnButton iconLeft="move" />
+              <div className="hmn-column__label">new_column1</div>
+            </div>
             <div className="hmn-column">
-              
-              <div className="hmn-column__label">New column 1</div>
+              <HmnButton iconLeft="move" />
+              <div className="hmn-column__label">new_column1</div>
             </div>
           </div>
         </div>
