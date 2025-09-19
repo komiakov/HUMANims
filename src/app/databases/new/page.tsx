@@ -17,5 +17,38 @@ export default function Databases() {
 
   const currentColumn = database.columns.find((col) => col.id === activeColumn);
 
-  return <div id="ims-content"></div>;
+  return (
+    <div id="ims-content">
+      <div id="functional-panel" className="container-flex">
+        <section>
+          <HmnButton type="accent" iconLeft="arrowLeft" disabled={true} />
+        </section>
+        <section>
+          <HmnButton
+            label="Edit form"
+            type="primary mbl-hide"
+            iconLeft="editForm"
+            disabled={true}
+          />
+          <HmnButton
+            label="Save"
+            type="accent"
+            iconLeft="save"
+            disabled={true}
+          />
+        </section>
+      </div>
+
+      <div id="ims-content-body">
+        <div id="ims-content-body__name-and-column">
+          <HmnInput placeholder="Database name" />
+          <HmnButton type="accent mbl-hide" label="Add column" iconLeft="add" />
+        </div>
+        <div id="ims-content-body__search">
+          <HmnInput placeholder="Search columns" iconLeft="search" />
+        </div>
+        <div className="scroll"></div>
+      </div>
+    </div>
+  );
 }

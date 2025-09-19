@@ -25,6 +25,7 @@
   border-radius: var(--items-border-r);
   cursor: pointer;
   overflow: hidden;
+  white-space: nowrap;
 
   &,
   & .hmn-button__label,
@@ -34,6 +35,7 @@
   .hmn-button__icon,
   .hmn-button__label {
     z-index: 2;
+    white-space: nowrap;
   }
   .hmn-button__label {
     padding: 0 9px;
@@ -98,7 +100,7 @@
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 720px) {
   .hmn-button.mbl-hide {
     .hmn-button__label {
       display: none;

@@ -1,0 +1,26 @@
+#ims-content-body {
+    display: grid;
+    align-items: start;
+    align-content: start;
+    grid-template-rows: auto auto 1fr;
+    padding: 12px;
+    gap: 9px;
+
+    #ims-content-body__name-and-column,
+    #ims-content-body__search,
+    .scroll {
+        margin: 0 auto;
+        max-width: 960px;
+        width: 100%;
+        padding: 9px;
+        border-radius: 12px;
+        background-color: var(--bg-main);
+        border: 1px solid var(--brdr-color);
+    }
+
+    #ims-content-body__name-and-column {
+        display: flex;
+        gap: 9px;
+        :nth-child(1){flex: 1;}
+    }
+}
