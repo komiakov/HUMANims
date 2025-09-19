@@ -6,39 +6,38 @@
 :root {
   --items-border-r: 6px;
   --transtition: 0.3s all;
-  --main-gap: 9px;
 }
 
-body {
+body,
+#ims-page {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+#ims-page,
+#ims-content {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+#ims-content,
+#ims-content-body {
+  overflow: hidden;
+}
+
+body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg-main);
 
-  #ims-page {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    width: 100vw;
-    height: 100vh;
+  #ims-page #ims-content {
     overflow: hidden;
-
-    #ims-content {
-      display: grid;
-      grid-template-rows: auto 1fr;
-      height: 100%;
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-      #functional-panel {
-        padding: 12px;
-        border-bottom: 1px solid var(--brdr-color);
-        background-color: var(--bg-main);
-      }
-
-      #ims-content-body {
-        height: 100%;
-        overflow: hidden;
-      }
+    background-color: var(--bg-secondary);
+    #functional-panel {
+      padding: 12px;
+      border-bottom: 1px solid var(--brdr-color);
+      background-color: var(--bg-main);
     }
   }
 }

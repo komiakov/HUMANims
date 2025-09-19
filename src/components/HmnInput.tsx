@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useIcons } from "@/hooks/useIcons";
 import "@/styles/components/hmnInput.scss";
 
@@ -22,6 +22,10 @@ export default function HmnInput({
   const icons = useIcons();
   const [value, setValue] = useState(defaultValue);
 
+  useEffect(() => {
+    setValue(defaultValue);
+  }, [defaultValue]);
+
   return (
     <div className="hmn-input">
       {iconLeft && (
@@ -34,14 +38,19 @@ export default function HmnInput({
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onBlur={() => onSave?.(value)}
+        onChange={(e) => {
+          setValue(e.target.value)
+          onSave?.(e.target.value)
+        }}
       />
       {value && (
         <span
           className="icon hmn-input__icon hmn-input__icon--clear"
           dangerouslySetInnerHTML={{ __html: icons["close"] }}
-          onClick={() => setValue("")}
+          onClick={() => {
+            setValue("")
+            onSave?.("")
+          }}
         />
       )}
     </div>

@@ -11,6 +11,7 @@ interface HmnButtonProps {
   iconRight?: string;
   disabled?: boolean;
   type?: string;
+  className?: string;
   onClick?: () => void;
 }
 
