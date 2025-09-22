@@ -12,7 +12,7 @@ interface HmnColumnProps {
 
 export default function HmnColumn({ columnId }: HmnColumnProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { database, updateColumn } = useColumns();
+  const { database, updateColumn, deleteColumn } = useColumns();
 
   const currentColumn = database.columns.find((c) => c.id === columnId);
 
@@ -22,14 +22,18 @@ export default function HmnColumn({ columnId }: HmnColumnProps) {
     <div className="hmn-column">
       <div className="hmn-column__header container-flex">
         <section>
-          <HmnButton iconLeft="move" />
+          <HmnButton iconLeft="move" type="primary move" disabled={true} />
           <span className="hmn-column__header__name">
             {currentColumn.name.value}
           </span>
         </section>
         <section>
           <HmnButton iconLeft="duplicate" type="warning" disabled={true} />
-          <HmnButton iconLeft="delete" type="alert" disabled={true} />
+          <HmnButton
+            iconLeft="delete"
+            type="alert"
+            onClick={() => deleteColumn(currentColumn.id)}
+          />
           <HmnButton
             iconLeft="arrowDown"
             onClick={() => setIsOpen(!isOpen)}

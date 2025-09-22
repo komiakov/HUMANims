@@ -15,6 +15,9 @@
         &.rotate svg {
             transform: rotate(180deg);
         }
+        &.move {
+            cursor: move;
+        }
     }
   }
   .hmn-column__body {

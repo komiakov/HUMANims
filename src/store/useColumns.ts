@@ -27,6 +27,7 @@ interface ColumnsStore {
   getColumnById: (id: number) => Column | undefined;
   resetDatabase: () => void;
   updateColumn: (id: number, newData: Partial<Column>) => void;
+  deleteColumn: (id: number) => void;
 }
 
 export const useColumns = create<ColumnsStore>((set, get) => ({
@@ -58,8 +59,7 @@ export const useColumns = create<ColumnsStore>((set, get) => ({
       };
     }),
 
-  getColumnById: (id) =>
-    get().database.columns.find((col) => col.id === id),
+  getColumnById: (id) => get().database.columns.find((col) => col.id === id),
 
   resetDatabase: () =>
     set({
@@ -69,6 +69,14 @@ export const useColumns = create<ColumnsStore>((set, get) => ({
         columns: [],
       },
     }),
+
+  deleteColumn: (id) =>
+    set((state) => ({
+      database: {
+        ...state.database,
+        columns: state.database.columns.filter((col) => col.id !== id),
+      },
+    })),
 
   updateColumn: (id, newData) =>
     set((state) => ({
