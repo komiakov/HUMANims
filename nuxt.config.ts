@@ -1,0 +1,20 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: false },
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: [
+            '@use "~/assets/normilize.scss" as *;',
+            '@use "~/assets/colors.scss" as *;',
+          ].join('\n'),
+        },
+      },
+    },
+  },
+
+  css: ['~/assets/main.scss'],
+})
