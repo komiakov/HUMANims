@@ -1,10 +1,15 @@
 <script setup lang="ts">
-
+useHead({
+  htmlAttrs: {
+    'data-theme': 'light',
+  },
+})
 </script>
 
 <template>
-    <div id="all-page" data-theme="light">
+    <div id="all-page">
         <HmnNav />
+        <NuxtPage />
     </div>
 </template>
 
