@@ -10,11 +10,11 @@ export default defineNuxtConfig({
           additionalData: [
             '@use "~/assets/normilize.scss" as *;',
             '@use "~/assets/colors.scss" as *;',
+            '@use "~/assets/fonts.scss" as *;',
+            '@use "~/assets/main.scss" as *;',
           ].join('\n'),
         },
       },
     },
   },
-
-  css: ['~/assets/main.scss'],
 })

@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --block-gap: 12px;
+  --item-gap: 6px;
+
+  --block-padding: 12px;
+  --item-padding: 6px;
+
+  --item-radius: 36px;
+
+  --icon-size: 16px;
+}
+
+@mixin base-size() {
+  height: 36px;
+  width: 36px;
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+* {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--block-gap);
+  section {
+    display: flex;
+    align-items: center;
+    gap: var(--block-gap);
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+}
