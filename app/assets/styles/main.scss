@@ -1,0 +1,42 @@
+body {
+  font-family: "Google Sans", sans-serif;
+
+  &,
+  #all-page {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+hr {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--primary-brdr-color);
+}
+
+.container-flex {
+  justify-content: space-between;
+
+  &,
+  section{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+}
+
+.icon {
+  &,
+  svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-xs);
+    height: var(--size-xs);
+  }
+
+  svg path {
+    transition: var(--transition);
+  }
+}

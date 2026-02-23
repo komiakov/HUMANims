@@ -1,0 +1,21 @@
+@mixin min-width($size) {
+  @media (min-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin max-width($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    transition: 0.3s all;
+    &:hover {
+      transition: 0.3s all;
+      @content;
+    }
+  }
+}
