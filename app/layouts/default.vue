@@ -3,7 +3,7 @@
         <LayoutAppHeader />
 
         <div id="content">
-
+            <NuxtPage />
         </div>
     </div>
 </template>
@@ -23,6 +23,11 @@
     #content {
         height: 100%;
         background-color: var(--secondary-bg-color);
+
+        #content-header {
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-bottom: 1px solid var(--primary-brdr-color);
+        }
     }
 }
 </style>
