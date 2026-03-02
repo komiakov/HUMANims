@@ -66,13 +66,13 @@ function clear() {
         }
 
         .hmn-input__label-text {
-            color: var(--secondary-ft-color);
+            color: var(--primary-ft-color);
         }
 
         .hmn-input__label-required {
             padding: 2px var(--spacing-md);
             font-size: 10px;
-            color: var(--primary-ft-color);
+            color: var(--secondary-ft-color);
             border: 1px solid var(--primary-brdr-color);
             border-radius: var(--radius-xl);
             background-color: var(--primary-item-color);
