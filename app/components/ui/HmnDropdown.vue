@@ -37,7 +37,7 @@ function toggle() {
 <style lang="scss">
 .hmnDropdown__body {
     display: grid;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     min-width: 210px;
     background-color: var(--primary-bg-color);
     padding: var(--spacing-sm);
