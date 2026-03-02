@@ -25,7 +25,7 @@
         background-color: var(--secondary-bg-color);
 
         #content-header {
-            padding: var(--spacing-xs) var(--spacing-md);
+            padding: var(--spacing-sm) var(--spacing-md);
             border-bottom: 1px solid var(--primary-brdr-color);
         }
     }
