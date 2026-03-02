@@ -4,7 +4,7 @@ import AppNav from './AppNav.vue';
 </script>
 
 <template>
-    <header>
+    <header id="header-ims">
         <div class="container-flex">
             <section>
 
@@ -42,7 +42,7 @@ import AppNav from './AppNav.vue';
 </template>
 
 <style lang="scss">
-header {
+#header-ims {
     display: grid;
     gap: var(--spacing-xl);
     padding: var(--spacing-md) var(--spacing-md) 0;

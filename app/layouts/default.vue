@@ -1,5 +1,5 @@
 <template>
-    <div id="all-page">
+    <div class="all-page" id="ims-page">
         <LayoutAppHeader />
 
         <div id="content">
@@ -9,8 +9,7 @@
 </template>
 
 <style lang="scss">
-#all-page {
-    background-color: var(--primary-bg-color);
+#ims-page {
 
     &,
     #content {
