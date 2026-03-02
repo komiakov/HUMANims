@@ -7,7 +7,7 @@ definePageMeta({
 <template>
     <div id="auth-container">
         <section id="auth-container__header">
-            <h1 class="ft-h1">Sign in</h1>
+            <h1 class="ft-h1">Sign In</h1>
             <span class="ft-label">to your account</span>
         </section>
 
