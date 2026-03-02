@@ -4,7 +4,7 @@
 
         </section>
         <section>
-            <UiHmnButton icon-left="editDashboard" label="Edit dashboard" />
+            <UiHmnButton icon-left="editDashboard" label="Edit dashboard" :disabled="true" />
         </section>
     </div>
     <div id="content-body">

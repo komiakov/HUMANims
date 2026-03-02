@@ -6,9 +6,9 @@
                     <UiHmnButton icon-left="add" label="Create" variant="accent" />
                 </template>
                 <template #body>
-                    <UiHmnButton icon-left="addFolder" label="Folder" variant="transparent" :small="true" />
+                    <UiHmnButton icon-left="addFolder" label="Folder" variant="transparent" :small="true" :disabled="true" />
                     <hr>
-                    <UiHmnButton icon-left="report" label="Report" variant="transparent" :small="true" />
+                    <UiHmnButton icon-left="report" label="Report" variant="transparent" :small="true" :disabled="true" />
                 </template>
             </UiHmnDropdown>
             

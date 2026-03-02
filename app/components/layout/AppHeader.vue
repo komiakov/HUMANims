@@ -10,9 +10,9 @@ import AppNav from './AppNav.vue';
 
             </section>
             <section>
-                <UiHmnButton icon-left="search" label="Search anything ..." :hide-label-on-mobile="true" />
-                <UiHmnButton icon-left="support" label="Support" :hide-label-on-mobile="true" />
-                <UiHmnButton icon-left="notification" />
+                <UiHmnButton icon-left="search" label="Search anything ..." :hide-label-on-mobile="true" :disabled="true" />
+                <UiHmnButton icon-left="support" label="Support" :hide-label-on-mobile="true" :disabled="true" />
+                <UiHmnButton icon-left="notification" :disabled="true" />
 
                 <UiHmnDropdown>
                     <template #btn>
@@ -26,13 +26,13 @@ import AppNav from './AppNav.vue';
                             <span id="user-dropdown__info-email" class="ft-label">andrii.komiakov@icloud.com</span>
                         </div>
                         <hr>
-                        <UiHmnButton label="Settings" icon-left="settings" :small="true" variant="transparent" />
-                        <UiHmnButton label="License" icon-left="license" :small="true" variant="transparent" />
+                        <UiHmnButton label="Settings" icon-left="settings" :small="true" variant="transparent" :disabled="true" />
+                        <UiHmnButton label="License" icon-left="license" :small="true" variant="transparent" :disabled="true" />
                         <hr>
                         <UiHmnButton label="Documentation" icon-left="documentation" :small="true"
-                            variant="transparent" />
+                            variant="transparent" :disabled="true" />
                         <hr>
-                        <UiHmnButton label="Log Out" icon-left="logOut" :small="true" variant="alert" />
+                        <UiHmnButton label="Log Out" icon-left="logOut" :small="true" variant="alert" :disabled="true" />
                     </template>
                 </UiHmnDropdown>
             </section>
