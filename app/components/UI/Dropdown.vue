@@ -22,29 +22,28 @@ function toggle() {
 </script>
 
 <template>
-    <div class="hmnDropdown" ref="rootRef"> 
-        <div ref="anchorRef" class="hmnDropdown__btn" @click="toggle">
+    <div class="dropdown" ref="rootRef">
+        <div ref="anchorRef" class="dropdown__btn" @click="toggle">
             <slot name="btn"></slot>
         </div>
 
-        <div v-show="isOpen" ref="dropdownRef" class="hmnDropdown__body" :style="dropdownStyle"
-            role="menu">
+        <div v-show="isOpen" ref="dropdownRef" class="dropdown__body" :style="dropdownStyle" role="menu">
             <slot name="body"></slot>
         </div>
     </div>
 </template>
 
 <style lang="scss">
-.hmnDropdown__body {
+.dropdown__body {
     display: grid;
     gap: var(--spacing-xs);
     min-width: 210px;
-    background-color: var(--primary-bg-color);
-    padding: var(--spacing-sm);
+    background-color: var(--secondary-bg-color);
+    padding: var(--spacing-xs);
     border-radius: var(--radius-sm);
-    border: 1px solid var(--primary-brdr-color);
+    border: 1px solid var(--secondary-brdr-color);
 
-    .hmn-button {
+    .btn {
         justify-content: start;
     }
 }

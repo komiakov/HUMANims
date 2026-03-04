@@ -2,18 +2,12 @@ body {
   font-family: "Google Sans", sans-serif;
 
   &,
-  .all-page {
+  .page {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     background-color: var(--primary-bg-color);
   }
-}
-
-hr {
-  width: 100%;
-  margin: 0;
-  border: none;
-  border-top: 1px solid var(--primary-brdr-color);
 }
 
 .container-flex {
@@ -25,6 +19,13 @@ hr {
     align-items: center;
     gap: var(--spacing-md);
   }
+}
+
+hr {
+  width: 100%;
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--secondary-brdr-color);
 }
 
 .icon {

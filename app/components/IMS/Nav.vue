@@ -5,17 +5,17 @@ const route = useRoute()
 function isActive(path: string) {
     const current = route.fullPath
 
-    if (path === "/") {
-        return current === "/"
+    if (path === "/ims") {
+        return current === "/ims"
     }
 
     return current.startsWith(path)
 }
 
 const navItems = ref([
-    { label: "Dashboard", icon: 'dashboard', link: '/' },
-    { label: "Databases", icon: 'database', link: '/databases' },
-    { label: "Reports", icon: 'report', link: '/reports' },
+    { label: "Dashboard", icon: 'dashboard', link: '/ims' },
+    { label: "Databases", icon: 'database', link: '/ims/databases' },
+    { label: "Reports", icon: 'report', link: '/ims/reports' },
 ])
 
 const underlineLeft = ref(0)
@@ -61,10 +61,10 @@ onBeforeUnmount(() => {
     <nav ref="nav">
         <div class="nav-underline" :style="{
             width: underlineWidth + 'px',
-            left: underlineLeft + 'px'
-        }"></div>
+            left: underlineLeft + 'px'}">
+        </div>
 
-        <UiHmnButton v-for="navItem in navItems" :key="navItem.link" class="nav-link" :active="isActive(navItem.link)"
+        <UIButton v-for="navItem in navItems" :key="navItem.link" class="nav-link" :active="isActive(navItem.link)"
             :label="navItem.label" :icon-left="navItem.icon" :to="navItem.link" variant="transparent" />
     </nav>
 </template>
@@ -74,7 +74,7 @@ nav {
     position: relative;
     display: flex;
     gap: var(--spacing-xs);
-    padding-bottom: var(--spacing-xs);
+    padding-bottom: var(--spacing-md);
 
     .nav-underline {
         position: absolute;
@@ -85,10 +85,6 @@ nav {
         border-radius: 2px;
         transition: var(--transition);
         pointer-events: none;
-    }
-
-    @include max-width (599.9px) {
-        justify-content: space-around;
     }
 }
 </style>
