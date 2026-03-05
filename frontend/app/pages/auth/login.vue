@@ -5,8 +5,8 @@ definePageMeta({
     middleware: ['guest']
 })
 
-const email = ref('andrii.komiakov@icloud.com')
-const password = ref('Ikissaboy016')
+const email = ref('')
+const password = ref('')
 const error = ref<string | null>(null)
 
 async function onLogin() {
