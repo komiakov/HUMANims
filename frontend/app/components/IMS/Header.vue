@@ -1,5 +1,11 @@
 <script setup lang="ts">
+const user = useSupabaseUser()
+const supabase = useSupabaseClient()
 
+async function logout() {
+  await supabase.auth.signOut()
+  await navigateTo('/auth/login')
+}
 </script>
 
 <template>
@@ -19,10 +25,10 @@
                         <UIButton class="user-btn" icon-left="user" :rounded="true" variant="accent" />
                     </template>
                     <template #body>
-                        <div id="user-dropdown__info">
+                        <div id="user-dropdown__info" v-if="user">
                             <span id="user-dropdown__info-label" class="ft-body-lg">LOGGED IN AS</span>
                             <span id="user-dropdown__info-name" class="ft-h2"></span>
-                            <span id="user-dropdown__info-email" class="ft-label"></span>
+                            <span id="user-dropdown__info-email" class="ft-label">{{ user.email }}</span>
                         </div>
                         <hr>
                         <UIButton label="Settings" icon-left="settings" :small="true" variant="transparent"
@@ -33,7 +39,7 @@
                         <UIButton label="Documentation" icon-left="documentation" :small="true" variant="transparent"
                             :disabled="true" />
                         <hr>
-                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" />
+                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" @click="logout"/>
                     </template>
                 </UIDropdown>
             </section>

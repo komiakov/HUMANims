@@ -18,7 +18,17 @@ export default defineNuxtConfig({
 
   css: ['~/assets/styles/variables.scss','~/assets/styles/fonts.scss', '~/assets/styles/main.scss'],
 
-  routeRules: {
-    '/api/**': { proxy: 'http://127.0.0.1:8000/api/**' }
-  }
+  modules: ['@nuxtjs/supabase'],
+
+  supabase: {
+    // можно оставить по умолчанию
+    redirect: false, // мы сами будем делать редиректы middleware'ом
+  },
+
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+    },
+  },
 })

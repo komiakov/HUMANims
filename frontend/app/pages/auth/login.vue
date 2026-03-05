@@ -3,9 +3,27 @@ definePageMeta({
     layout: 'auth',
 })
 
+const supabase = useSupabaseClient()
+
 const email = ref('')
 const password = ref('')
 const error = ref<string | null>(null)
+
+async function signInWithEmail() {
+  error.value = null
+
+  const { error: err } = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+
+  if (err) {
+    error.value = err.message
+    return
+  }
+
+  await navigateTo('/ims')
+}
 </script>
 
 <template>
@@ -17,7 +35,8 @@ const error = ref<string | null>(null)
         <hr>
         <UIInput label="Email" :required="true" placeholder="e.g. your.email@email.com" v-model="email"/>
         <UIInput label="Password" :required="true" type="password" placeholder="••••••••••••••" v-model="password" />
-        <UIButton label="Log In" variant="accent" />
+        <UIButton label="Log In" variant="accent" @click="signInWithEmail()" />
+        <p v-if="error">{{ error }}</p>
     </div>
 </template>
 

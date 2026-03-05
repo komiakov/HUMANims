@@ -3,13 +3,15 @@
 </script>
 
 <template>
-    <div class="page" id="ims-page">
-        <IMSHeader />
+    <ClientOnly>
+        <div class="page" id="ims-page">
+            <IMSHeader />
 
-        <div class="content">
-            <NuxtPage />
+            <div class="content">
+                <NuxtPage />
+            </div>
         </div>
-    </div>
+    </ClientOnly>
 </template>
 
 <style lang="scss">
