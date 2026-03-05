@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+
+</script>
+
 <template>
     <div class="page" id="ims-page">
         <IMSHeader />

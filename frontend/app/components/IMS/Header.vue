@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { icons } = useIcons();
+definePageMeta({ middleware: ['auth'] })
+
+const auth = useAuth()
+
+async function onLogout() {
+  await auth.logout()
+  await navigateTo('/auth/login')
+}
 </script>
 
 <template>
@@ -19,18 +26,21 @@ const { icons } = useIcons();
                         <UIButton class="user-btn" icon-left="user" :rounded="true" variant="accent" />
                     </template>
                     <template #body>
-                         <div id="user-dropdown__info">
+                        <div id="user-dropdown__info" v-if="auth.user.value">
                             <span id="user-dropdown__info-label" class="ft-body-lg">LOGGED IN AS</span>
-                            <span id="user-dropdown__info-name" class="ft-h2">Andrii KOMIAKOV</span>
-                            <span id="user-dropdown__info-email" class="ft-label">andrii.komiakov@icloud.com</span>
+                            <span id="user-dropdown__info-name" class="ft-h2">{{ auth.user.value.first_name }} {{ auth.user.value.last_name }}</span>
+                            <span id="user-dropdown__info-email" class="ft-label">{{ auth.user.value.email }}</span>
                         </div>
                         <hr>
-                        <UIButton label="Settings" icon-left="settings" :small="true" variant="transparent" :disabled="true" />
-                        <UIButton label="License" icon-left="license" :small="true" variant="transparent" :disabled="true" />
+                        <UIButton label="Settings" icon-left="settings" :small="true" variant="transparent"
+                            :disabled="true" />
+                        <UIButton label="License" icon-left="license" :small="true" variant="transparent"
+                            :disabled="true" />
                         <hr>
-                        <UIButton label="Documentation" icon-left="documentation" :small="true" variant="transparent" :disabled="true" />
+                        <UIButton label="Documentation" icon-left="documentation" :small="true" variant="transparent"
+                            :disabled="true" />
                         <hr>
-                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" to="/auth/login" />
+                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" @click="onLogout" />
                     </template>
                 </UIDropdown>
             </section>
