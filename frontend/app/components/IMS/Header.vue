@@ -1,12 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ middleware: ['auth'] })
 
-const auth = useAuth()
-
-async function onLogout() {
-  await auth.logout()
-  await navigateTo('/auth/login')
-}
 </script>
 
 <template>
@@ -26,10 +19,10 @@ async function onLogout() {
                         <UIButton class="user-btn" icon-left="user" :rounded="true" variant="accent" />
                     </template>
                     <template #body>
-                        <div id="user-dropdown__info" v-if="auth.user.value">
+                        <div id="user-dropdown__info">
                             <span id="user-dropdown__info-label" class="ft-body-lg">LOGGED IN AS</span>
-                            <span id="user-dropdown__info-name" class="ft-h2">{{ auth.user.value.first_name }} {{ auth.user.value.last_name }}</span>
-                            <span id="user-dropdown__info-email" class="ft-label">{{ auth.user.value.email }}</span>
+                            <span id="user-dropdown__info-name" class="ft-h2"></span>
+                            <span id="user-dropdown__info-email" class="ft-label"></span>
                         </div>
                         <hr>
                         <UIButton label="Settings" icon-left="settings" :small="true" variant="transparent"
@@ -40,7 +33,7 @@ async function onLogout() {
                         <UIButton label="Documentation" icon-left="documentation" :small="true" variant="transparent"
                             :disabled="true" />
                         <hr>
-                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" @click="onLogout" />
+                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" />
                     </template>
                 </UIDropdown>
             </section>
