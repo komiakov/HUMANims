@@ -14,7 +14,7 @@ body {
   justify-content: space-between;
 
   &,
-  section{
+  section {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -40,5 +40,16 @@ hr {
 
   svg path {
     transition: var(--transition);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: var(--size-md);
+  color: var(--primary-ft-color);
+
+  span {
+    color: var(--accent-brdr-color);
   }
 }

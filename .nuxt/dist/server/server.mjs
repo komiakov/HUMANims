@@ -1,0 +1,1 @@
+export { default } from "file:///Users/akomiakov/02.Dev/HUMANims/node_modules/@nuxt/vite-builder/dist/vite-node-entry.mjs"

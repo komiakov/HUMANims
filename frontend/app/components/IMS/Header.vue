@@ -30,7 +30,7 @@ const { icons } = useIcons();
                         <hr>
                         <UIButton label="Documentation" icon-left="documentation" :small="true" variant="transparent" :disabled="true" />
                         <hr>
-                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" :disabled="true" />
+                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" to="/auth/login" />
                     </template>
                 </UIDropdown>
             </section>
@@ -46,18 +46,7 @@ const { icons } = useIcons();
     padding: var(--spacing-md) var(--spacing-md) 0;
     border-bottom: 1px solid var(--primary-brdr-color);
 
-    .logo {
-        display: flex;
-        align-items: center;
-        height: var(--size-md);
-        color: var(--primary-ft-color);
-
-        span {
-            color: var(--accent-brdr-color);
-        }
-    }
-
-     #user-dropdown__info {
+    #user-dropdown__info {
         display: grid;
         min-width: 210px;
         padding: var(--spacing-sm);
