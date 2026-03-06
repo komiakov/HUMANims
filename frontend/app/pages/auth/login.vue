@@ -18,7 +18,7 @@ async function signInWithEmail() {
   })
 
   if (err) {
-    error.value = err.message
+    error.value = "Неверные учетные данные"
     return
   }
 

@@ -3,7 +3,7 @@ definePageMeta({
     layout: 'ims'
 })
 
-const { createDatabase } = useDatabase()
+const { createDatabase  } = useDatabase()
 
 </script>
 
@@ -24,9 +24,5 @@ const { createDatabase } = useDatabase()
         <section>
             
         </section>
-    </div>
-
-    <div class="content-body">
-
     </div>
 </template>

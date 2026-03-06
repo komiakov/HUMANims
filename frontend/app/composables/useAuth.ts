@@ -1,8 +1,4 @@
-type ProfileRow = {
-  id: string
-  first_name: string | null
-  last_name: string | null
-}
+import type { ProfileRow } from '~/types/database/profile'
 
 export function useAuth() {
   const supabase = useSupabaseClient()

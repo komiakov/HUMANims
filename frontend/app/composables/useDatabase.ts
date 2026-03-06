@@ -1,23 +1,21 @@
-type DatabaseRow = {
-  id: string
-}
+import type { DatabaseRow } from "~/types/database/databaseRow";
 
 export function useDatabase() {
-  const supabase = useSupabaseClient()
+  const supabase = useSupabaseClient();
 
   async function createDatabase() {
-    const { data, error } = await supabase.rpc("create_user_table")
+    const { data, error } = await supabase.rpc("create_user_table");
 
     if (error) {
-      return
+      return;
     }
 
-    const db = data as { id: string }
+    const db = data as { id: string };
 
-    await navigateTo(`/ims/databases/${db.id}`)
+    await navigateTo(`/ims/databases/${db.id}`);
   }
 
   return {
-    createDatabase
-  }
+    createDatabase,
+  };
 }
