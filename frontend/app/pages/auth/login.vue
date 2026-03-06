@@ -18,7 +18,7 @@ async function signInWithEmail() {
   })
 
   if (err) {
-    error.value = "Неверные учетные данные"
+    error.value = "Incorrect email or password. Please try again."
     return
   }
 
@@ -27,7 +27,7 @@ async function signInWithEmail() {
 </script>
 
 <template>
-    <div class="login">
+    <form class="login"  @submit.prevent="signInWithEmail">
         <div class="login-header">
             <h2 class="ft-h2">Log In</h2>
             <span class="ft-label">to your account</span>
@@ -35,9 +35,9 @@ async function signInWithEmail() {
         <hr>
         <UIInput label="Email" :required="true" placeholder="e.g. your.email@email.com" v-model="email"/>
         <UIInput label="Password" :required="true" type="password" placeholder="••••••••••••••" v-model="password" />
-        <UIButton label="Log In" variant="accent" @click="signInWithEmail()" />
+        <UIButton label="Log In" variant="accent" @click="signInWithEmail()" type="submit" />
         <p v-if="error">{{ error }}</p>
-    </div>
+    </form>
 </template>
 
 <style lang="scss">
