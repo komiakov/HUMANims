@@ -1,18 +1,7 @@
 <script setup lang="ts">
-const supabase = useSupabaseClient()
+const { getProfile, logout } = useAuth()
 
-const { data: { user } } = await supabase.auth.getUser()
-
-const { data: profile, error } = await supabase
-  .from('profiles')
-  .select('*')
-  .eq('id', user!.id)
-  .maybeSingle()
-
-async function logout() {
-  await supabase.auth.signOut()
-  await navigateTo('/auth/login')
-}
+const profile = await getProfile()
 </script>
 
 <template>
@@ -32,10 +21,10 @@ async function logout() {
                         <UIButton class="user-btn" icon-left="user" :rounded="true" variant="accent" />
                     </template>
                     <template #body>
-                        <div id="user-dropdown__info" v-if="user && profile">
+                        <div id="user-dropdown__info" v-if="profile">
                             <span id="user-dropdown__info-label" class="ft-body-lg">LOGGED IN AS</span>
                             <span id="user-dropdown__info-name" class="ft-h2">{{ profile.first_name }} {{ profile.last_name }}</span>
-                            <span id="user-dropdown__info-email" class="ft-label">{{ user.email }}</span>
+                            <span id="user-dropdown__info-email" class="ft-label">{{ profile.email }}</span>
                         </div>
                         <hr>
                         <UIButton label="Settings" icon-left="settings" :small="true" variant="transparent"

@@ -2,6 +2,9 @@
 definePageMeta({
     layout: 'ims'
 })
+
+const { createDatabase } = useDatabase()
+
 </script>
 
 <template>
@@ -14,7 +17,7 @@ definePageMeta({
                 <template #body>
                     <UIButton label="Folder" icon-left="addFolder" :small="true" variant="transparent" :disabled="true" />
                     <hr>
-                    <UIButton label="Database" icon-left="database" :small="true" variant="transparent" :disabled="true" />
+                    <UIButton label="Database" icon-left="database" :small="true" variant="transparent" @click="createDatabase()" />
                 </template>
             </UIDropdown>
         </section>
