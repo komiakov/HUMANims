@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { getProfile, logout } = useAuth()
 
-const profile = await getProfile()
 </script>
 
 <template>
@@ -21,10 +19,10 @@ const profile = await getProfile()
                         <UIButton class="user-btn" icon-left="user" :rounded="true" variant="accent" />
                     </template>
                     <template #body>
-                        <div id="user-dropdown__info" v-if="profile">
+                        <div id="user-dropdown__info">
                             <span id="user-dropdown__info-label" class="ft-body-lg">LOGGED IN AS</span>
-                            <span id="user-dropdown__info-name" class="ft-h2">{{ profile.first_name }} {{ profile.last_name }}</span>
-                            <span id="user-dropdown__info-email" class="ft-label">{{ profile.email }}</span>
+                            <span id="user-dropdown__info-name" class="ft-h2"> </span>
+                            <span id="user-dropdown__info-email" class="ft-label"></span>
                         </div>
                         <hr>
                         <UIButton label="Settings" icon-left="settings" :small="true" variant="transparent"
@@ -35,7 +33,7 @@ const profile = await getProfile()
                         <UIButton label="Documentation" icon-left="documentation" :small="true" variant="transparent"
                             :disabled="true" />
                         <hr>
-                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert" @click="logout"/>
+                        <UIButton label="Log Out" icon-left="logOut" :small="true" variant="alert"/>
                     </template>
                 </UIDropdown>
             </section>

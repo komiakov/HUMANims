@@ -2,15 +2,13 @@
 definePageMeta({
     layout: 'ims'
 })
-const route = useRoute()
-
-const dbName = route.params.id as string
 </script>
 
 <template>
     <div class="content-header container-flex">
         <section>
-            <UIInput v-model="dbName" />
+            <UIButton icon-left="arrowLeft" to="/ims/databases"/>
+            <UIInput />
         </section>
     </div>
 
